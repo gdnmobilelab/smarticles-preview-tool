@@ -134,12 +134,10 @@
             <iframe class='preview__iframe' data-url='http://localhost:8000/?seen=1,2,3,4,5,6&visit=2'></iframe>
         </div>
 
-<!--
         <div class='preview'>
-            <h2 class='preview__label'>First timer</h2>
-            <iframe class='preview__iframe' data-url='http://localhost:8000/?seen=0&visit=1'></iframe>
+            <h2 class='preview__label'>Late visit</h2>
+            <iframe class='preview__iframe' data-url='http://localhost:8000/?seen=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18&visit=3'></iframe>
         </div>
--->
     </main>
 
     <script type='text/javascript'>
@@ -152,7 +150,7 @@
 
             document.getElementsByClassName('preview__iframe')[0].setAttribute('src', defaultUrl[0] + '&id=' + id);
             document.getElementsByClassName('preview__iframe')[1].setAttribute('src', defaultUrl[1] + '&id=' + id);
-//             document.getElementsByClassName('preview__iframe')[2].setAttribute('src', defaultUrl[2] + '&id=' + id);
+            document.getElementsByClassName('preview__iframe')[2].setAttribute('src', defaultUrl[2] + '&id=' + id);
         }
 
         function bindings() {
@@ -162,7 +160,7 @@
         function setVars() {
             defaultUrl[0] = document.getElementsByClassName('preview__iframe')[0].getAttribute('data-url');
             defaultUrl[1] = document.getElementsByClassName('preview__iframe')[1].getAttribute('data-url');
-//             defaultUrl[2] = document.getElementsByClassName('preview__iframe')[2].getAttribute('data-url');
+            defaultUrl[2] = document.getElementsByClassName('preview__iframe')[2].getAttribute('data-url');
         }
 
         function init() {
