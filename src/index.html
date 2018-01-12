@@ -148,6 +148,11 @@
             <h2 class='preview__label'>Second visit <span class='preview__label-time'>Last visit: 1 week ago</span></h2>
             <iframe class='preview__iframe' data-url='https://www.gdnmobilelab.com/smarticles/united-story-test-new-features/index.html?preview=4'></iframe>
         </div>
+
+        <div class='preview'>
+            <h2 class='preview__label'>All atoms (including unpublished) <span class='preview__label-time'>Last visit: none</span></h2>
+            <iframe class='preview__iframe' data-url='https://www.gdnmobilelab.com/smarticles/united-story-test-new-features/index.html?preview=1&debug'></iframe>
+        </div>
     </main>
 
     <script type='text/javascript'>
@@ -162,6 +167,7 @@
             document.getElementsByClassName('preview__iframe')[1].setAttribute('src', defaultUrl[1] + '&id=' + id);
             document.getElementsByClassName('preview__iframe')[2].setAttribute('src', defaultUrl[2] + '&id=' + id);
             document.getElementsByClassName('preview__iframe')[3].setAttribute('src', defaultUrl[3] + '&id=' + id);
+            document.getElementsByClassName('preview__iframe')[4].setAttribute('src', defaultUrl[4] + '&id=' + id);
         }
 
         function bindings() {
@@ -173,6 +179,7 @@
             defaultUrl[1] = document.getElementsByClassName('preview__iframe')[1].getAttribute('data-url');
             defaultUrl[2] = document.getElementsByClassName('preview__iframe')[2].getAttribute('data-url');
             defaultUrl[3] = document.getElementsByClassName('preview__iframe')[3].getAttribute('data-url');
+            defaultUrl[4] = document.getElementsByClassName('preview__iframe')[4].getAttribute('data-url');
         }
 
         function init() {
