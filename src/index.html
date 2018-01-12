@@ -61,6 +61,11 @@
             font-size: 20px;
         }
 
+        .preview__label-time {
+            display: block;
+            color: #999;
+        }
+
         .options__label {
             margin-top: 24px;
         }
@@ -125,18 +130,23 @@
 
     <main>
         <div class='preview'>
-            <h2 class='preview__label'>First timer</h2>
-            <iframe class='preview__iframe' data-url='http://localhost:8000/?seen=0&visit=1'></iframe>
+            <h2 class='preview__label'>First timer <span class='preview__label-time'>Last visit: none</span></h2>
+            <iframe class='preview__iframe' data-url='http://localhost:8000/?preview=1'></iframe>
         </div>
 
         <div class='preview'>
-            <h2 class='preview__label'>Repeat visit</h2>
-            <iframe class='preview__iframe' data-url='http://localhost:8000/?seen=1,2,3,4,5,6&visit=2'></iframe>
+            <h2 class='preview__label'>Second visit <span class='preview__label-time'>Last visit: 1 day ago</span></h2>
+            <iframe class='preview__iframe' data-url='http://localhost:8000/?preview=2'></iframe>
         </div>
 
         <div class='preview'>
-            <h2 class='preview__label'>Late visit</h2>
-            <iframe class='preview__iframe' data-url='http://localhost:8000/?seen=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18&visit=3'></iframe>
+            <h2 class='preview__label'>Second visit <span class='preview__label-time'>Last visit: 3 days ago</span></h2>
+            <iframe class='preview__iframe' data-url='http://localhost:8000/?preview=3'></iframe>
+        </div>
+
+        <div class='preview'>
+            <h2 class='preview__label'>Second visit <span class='preview__label-time'>Last visit: 1 week ago</span></h2>
+            <iframe class='preview__iframe' data-url='http://localhost:8000/?preview=4'></iframe>
         </div>
     </main>
 
@@ -151,6 +161,7 @@
             document.getElementsByClassName('preview__iframe')[0].setAttribute('src', defaultUrl[0] + '&id=' + id);
             document.getElementsByClassName('preview__iframe')[1].setAttribute('src', defaultUrl[1] + '&id=' + id);
             document.getElementsByClassName('preview__iframe')[2].setAttribute('src', defaultUrl[2] + '&id=' + id);
+            document.getElementsByClassName('preview__iframe')[3].setAttribute('src', defaultUrl[3] + '&id=' + id);
         }
 
         function bindings() {
@@ -161,6 +172,7 @@
             defaultUrl[0] = document.getElementsByClassName('preview__iframe')[0].getAttribute('data-url');
             defaultUrl[1] = document.getElementsByClassName('preview__iframe')[1].getAttribute('data-url');
             defaultUrl[2] = document.getElementsByClassName('preview__iframe')[2].getAttribute('data-url');
+            defaultUrl[3] = document.getElementsByClassName('preview__iframe')[3].getAttribute('data-url');
         }
 
         function init() {
