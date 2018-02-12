@@ -158,10 +158,18 @@
     <script type='text/javascript'>
         var inputs, groups, defaultUrl = [];
 
+        function getOldId() {
+            var id = localStorage.getItem('previewId');
+            console.log(id);
+            if (id !== '') {
+                document.getElementsByClassName('options__input')[0].value = id;
+            }
+        }
+
         function updateUrl() {
             var id = document.getElementsByClassName('options__input')[0].value;
 
-            console.log(defaultUrl);
+            localStorage.setItem('previewId', id);
 
             document.getElementsByClassName('preview__iframe')[0].setAttribute('src', defaultUrl[0] + '&id=' + id);
             document.getElementsByClassName('preview__iframe')[1].setAttribute('src', defaultUrl[1] + '&id=' + id);
@@ -183,6 +191,7 @@
         }
 
         function init() {
+            getOldId();
             setVars();
             bindings();
             updateUrl();
